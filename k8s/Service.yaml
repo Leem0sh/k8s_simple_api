@@ -1,0 +1,15 @@
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: api-deployment-service
+spec:
+  clusterIP: ""
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: api-deployment
+---

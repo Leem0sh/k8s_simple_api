@@ -1,0 +1,4 @@
+fastapi
+dynaconf
+gunicorn
+uvicorn

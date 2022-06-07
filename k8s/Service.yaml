@@ -11,20 +11,8 @@ spec:
     - port: 80
       targetPort: 8080
       protocol: TCP
-#  clusterIP: 10.106.105.102
-#  clusterIPs:
-#    - 10.106.105.102
-#  sessionAffinity: None
-#  ipFamilies:
-#    - IPv4
-#  ipFamilyPolicy: SingleStack
-#  internalTrafficPolicy: Cluster
   selector:
     app: api-deployment
-
-#
-#status:
-#  loadBalancer: {}
 
 
 ---

@@ -3,13 +3,91 @@
 kind: Service
 apiVersion: v1
 metadata:
+  namespace: api
   name: api-deployment-service
 spec:
-  clusterIP: ""
+  type: NodePort
   ports:
     - port: 80
       targetPort: 8080
       protocol: TCP
+#  clusterIP: 10.106.105.102
+#  clusterIPs:
+#    - 10.106.105.102
+#  sessionAffinity: None
+#  ipFamilies:
+#    - IPv4
+#  ipFamilyPolicy: SingleStack
+#  internalTrafficPolicy: Cluster
   selector:
     app: api-deployment
+
+#
+#status:
+#  loadBalancer: {}
+
+
 ---
+# Kubernetes-dashboard Service.yaml
+#
+#kind: Service
+#apiVersion: v1
+#metadata:
+#  name: kubernetes-dashboard
+#  namespace: kubernetes-dashboard
+#  uid: f357e150-23c3-4980-8325-d889fa7df4f9
+#  resourceVersion: '5367'
+#  creationTimestamp: '2022-06-07T10:22:55Z'
+#  labels:
+#    addonmanager.kubernetes.io/mode: Reconcile
+#    k8s-app: kubernetes-dashboard
+#    kubernetes.io/minikube-addons: dashboard
+#  annotations:
+#    kubectl.kubernetes.io/last-applied-configuration: >
+#      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard"},"spec":{"ports":[{"port":80,"targetPort":9090}],"selector":{"k8s-app":"kubernetes-dashboard"}}}
+#  managedFields:
+#    - manager: kubectl-client-side-apply
+#      operation: Update
+#      apiVersion: v1
+#      time: '2022-06-07T10:22:55Z'
+#      fieldsType: FieldsV1
+#      fieldsV1:
+#        f:metadata:
+#          f:annotations:
+#            .: {}
+#            f:kubectl.kubernetes.io/last-applied-configuration: {}
+#          f:labels:
+#            .: {}
+#            f:addonmanager.kubernetes.io/mode: {}
+#            f:k8s-app: {}
+#            f:kubernetes.io/minikube-addons: {}
+#        f:spec:
+#          f:internalTrafficPolicy: {}
+#          f:ports:
+#            .: {}
+#            k:{"port":80,"protocol":"TCP"}:
+#              .: {}
+#              f:port: {}
+#              f:protocol: {}
+#              f:targetPort: {}
+#          f:selector: {}
+#          f:sessionAffinity: {}
+#          f:type: {}
+#spec:
+#  ports:
+#    - protocol: TCP
+#      port: 80
+#      targetPort: 9090
+#  selector:
+#    k8s-app: kubernetes-dashboard
+#  clusterIP: 10.108.72.220
+#  clusterIPs:
+#    - 10.108.72.220
+#  type: ClusterIP
+#  sessionAffinity: None
+#  ipFamilies:
+#    - IPv4
+#  ipFamilyPolicy: SingleStack
+#  internalTrafficPolicy: Cluster
+#status:
+#  loadBalancer: {}

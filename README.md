@@ -1,4 +1,6 @@
 ```
+How to run
+
 Enable Kubernetes in Docker Desktop - go to settings - Kubernetes - enable
 
 Change dir to the project dir

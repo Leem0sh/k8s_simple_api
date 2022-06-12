@@ -8,11 +8,14 @@ from typing import Union
 
 from fastapi import FastAPI
 
-logger = logging.getLogger(__name__)
+
 logging.basicConfig(
     level=logging.INFO,
     datefmt="%d.%m.%Y %H:%M:%S",
     format="[%(asctime)s] %(levelname)s [%(name)s:%(module)s - %(funcName)s:%(lineno)s] %(message)s")
+
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -20,7 +23,7 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     logger.info("yolo")
-    return {"Hello": "WorldZOOP "}
+    return {"Hello": "World"}
 
 
 @app.get("/items/{item_id}")
